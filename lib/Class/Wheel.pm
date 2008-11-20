@@ -1,9 +1,9 @@
 package Class::Wheel;
 use strict;
-
+use Class::Accessor::Fast;
 use base qw/Class::Accessor::Fast Error/;
 
-$__PACKAGE__::VERSION = '0.001';
+$__PACKAGE__::VERSION = '0.02';
 
 @__PACKAGE__::FIELDS = qw//;
 @__PACKAGE__::STRICT_FIELDS = qw//;
@@ -14,9 +14,9 @@ sub new {
     bless $self,$class;
     
     $self->_setFields(\@__PACKAGE__::STRICT_FIELDS,\@__PACKAGE__::FIELDS);
-    
+        
     __PACKAGE__->mk_accessors(@__PACKAGE__::STRICT_FIELDS,@__PACKAGE__::FIELDS);
-    
+        
     foreach ( @{$self->{strictFields}} ){
         if( defined $param->{$_} ){
             $self->$_($param->{$_});

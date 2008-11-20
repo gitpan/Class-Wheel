@@ -6,8 +6,9 @@ WriteMakefile(
     NAME              => 'Class::Wheel',
     VERSION_FROM      => 'lib/Class/Wheel.pm', # finds $VERSION
     PREREQ_PM         => {
-        Error => 0,
-        Test::Strict => 0
+        'Error' => 0,
+        'Test::Strict' => 0,
+	'Class::Accessor::Fast' => 0
     }, # e.g., Module::Name => 1.1
     ($] >= 5.005 ?     ## Add these new keywords supported since 5.005
       (ABSTRACT_FROM  => 'lib/Class/Wheel.pm', # retrieve abstract from module
